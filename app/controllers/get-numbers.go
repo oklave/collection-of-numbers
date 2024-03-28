@@ -7,7 +7,7 @@ import (
 	"github.com/oklave/fiber/v2"
 )
 
-func GetBooks(c *fiber.Ctx) error {
+func GetNumber(c *fiber.Ctx) error {
 	// Вернуть все номера
 	db := database.NumberDB()
 	numbers, err := db.GetNumbers()
