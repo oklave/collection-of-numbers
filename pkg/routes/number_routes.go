@@ -22,6 +22,6 @@ func NumberRoutes(a *fiber.App) {
 	// route.Delete("/tg-id/:id", middleware.JWTProtected(), controllers.DeleteNumber) // delete one book by ID
 
 	// Маршруты GET метода:
-	route.Get("/all-tg-id", middleware.BasicAuth(), controllers.GetNumber) // получить все тг-id
+	// route.Get("/all-tg-id", middleware.BasicAuth(), controllers.GetNumber) // получить все тг-id
 	route.Get("/tg-id/:id", middleware.BasicAuth(), controllers.GetNumber) // получить определенный тг-id
 }
