@@ -8,8 +8,9 @@ import (
 )
 
 // Запуск для prod
+'''
 func StartServerWithGracefulShutdown(a *fiber.App) {
-	'''
+
 	Добавить канал для приема только shutdown! открыть его на всю функцию
 	
 	// Build Fiber connection URL.
@@ -23,9 +24,9 @@ func StartServerWithGracefulShutdown(a *fiber.App) {
 		log.Printf("Oops... Server is not running! Reason: %v", err)
 	}
 
-	'''
+	
 }
-
+'''
 
 // Запуск для dev
 func StartServer(a *fiber.App) {

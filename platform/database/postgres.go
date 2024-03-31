@@ -36,8 +36,7 @@ func InitDBConnection() (*Queries, error) {
 	}
 
 	return &Queries{
-		UserQueries: &queries.UserQueries{DB: db},
-		BookQueries: &queries.BookQueries{DB: db},
+		NumberQueries: &queries.NumberQueries{DB: db},
 	}, nil
 }
 
@@ -53,12 +52,7 @@ func CloseDBConnection(db *gorm.DB) error {
 	return nil
 }
 
-// UserDB used for init users db query
-func UserDB() *queries.UserQueries {
-	return &queries.UserQueries{DB: db}
-}
-
-// BookDB used for init number db query
+// NumberDB used for init number db query
 func NumberDB() *queries.NumberQueries {
-	return &queries.BookQueries{DB: db}
+	return &queries.NumberQueries{DB: db}
 }
