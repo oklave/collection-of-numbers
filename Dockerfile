@@ -1,4 +1,4 @@
-FROM golang:1.17-alpine AS builder
+FROM golang:1.21-alpine AS builder
 
 LABEL maintainer="oklave"
 
@@ -21,7 +21,7 @@ FROM scratch
 
 COPY sql ./sql
 
-# копируем бинарь в срач контейнер, для того чтобы контейнер был супер-маленьким
+# копируем бинарь в срач контейнер, для того чтобы он был супер-маленьким
 COPY --from=builder ["/build/service", "/build/.env", "/"]
 
 ENTRYPOINT ["/service"]

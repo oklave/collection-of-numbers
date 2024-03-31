@@ -14,7 +14,7 @@ services:
       - ${PWD:-./}:/build
 
   postgres:
-    image: postgres:12
+    image: postgres:16
     container_name: collection-of-numbers-postgres
     restart: always
     ports:
