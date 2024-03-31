@@ -26,7 +26,7 @@ func main() {
 	app := fiber.New(config)
 
 	// middlewares
-	middleware.FiberMiddleware(app)
+	//middleware.FiberMiddleware(app)
 
 	// проверка наличия файла с переменными среды
 	err := godotenv.Load(".env")
@@ -56,7 +56,7 @@ func main() {
 	// запуск сервера в dev/prod режиме
 	if os.Getenv("STAGE_STATUS") == "dev" {
 		utils.StartServer(app)
-	} else {
-		utils.StartServerWithGracefulShutdown(app)
+		//} else {
+		//	utils.StartServerWithGracefulShutdown(app)
 	}
 }

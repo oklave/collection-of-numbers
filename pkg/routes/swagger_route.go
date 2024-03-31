@@ -8,7 +8,7 @@ import (
 
 func SwaggerRoute(a *fiber.App) {
 	// Создание группы маршрутов.
-	route := a.Group("/swagger")
+	//route := a.Group("/swagger")
 
 	// Маршруты для get-метода
 	//route.Get("*", swagger.HandlerDefault)

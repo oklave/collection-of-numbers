@@ -15,7 +15,7 @@ func GetNumber(c *fiber.Ctx) error {
 		return response.RespondError(c, fiber.StatusInternalServerError, err.Error())
 	}
 	db := database.NumberDB()
-	book, err := db.GetBookById(id)
+	book, err := db.GetNumberById(id)
 	if err != nil {
 		// Return, if book not found.
 		return response.RespondError(c, fiber.StatusNotFound, "book with the given ID is not found")

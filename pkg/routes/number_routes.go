@@ -4,7 +4,6 @@ import (
 	"github.com/gofiber/fiber/v2"
 
 	"github.com/oklave/collection-of-numbers/app/controllers"
-	"github.com/oklave/collection-of-numbers/pkg/middleware"
 )
 
 // Функция маршрутизации url запросов начинающихся с /number
@@ -23,5 +22,5 @@ func NumberRoutes(a *fiber.App) {
 
 	// Маршруты GET метода:
 	// route.Get("/all-tg-id", middleware.BasicAuth(), controllers.GetNumber) // получить все тг-id
-	route.Get("/tg-id/:id", middleware.BasicAuth(), controllers.GetNumber) // получить определенный тг-id
+	route.Get("/tg-id/:id", controllers.GetNumber) // получить определенный тг-id
 }

@@ -15,16 +15,16 @@ type NumberQueries struct {
 
 // Получить информацию по tg-id
 func (q *NumberQueries) GetNumberById(id uuid.UUID) (models.Number, error) {
-	// Определяем переменную
+	// Определяем модель
 	number := models.Number{}
 
-	// Send query to database.
-	err := q.DB.Table("numbers", q.DB.Model(&Number)).Where("id = ?", id).Find(&Number).Error
+	// Отправляем запрос к таблице на такой-то id
+	err := q.DB.Table("numbers", q.DB.Model(&number)).Where("id = ?", id).Find(&number).Error
 	if err != nil {
-		// вернуть объект с ошибкой
-		return Number, errors.New("unable get user, DB error")
+		// Вернуть объект с ошибкой
+		return number, errors.New("unable get user, DB error")
 	}
 
-	// Return query result.
+	// Вернуть данные по tg-id
 	return number, nil
 }

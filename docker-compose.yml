@@ -1,0 +1,27 @@
+version: '3'
+services:
+  service:
+    container_name: collection-of-numbers-service
+    working_dir: /build
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+    volumes:
+      - ${PWD:-./}:/build
+
+  postgres:
+    image: postgres:12
+    container_name: collection-of-numbers-postgres
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=postgres
+#    volumes:
+#      - ${PWD}/build/dev-postgres/data/:/var/lib/postgresql/data

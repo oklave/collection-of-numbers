@@ -1,18 +1,17 @@
 package utils
 
 import (
-	"github.com/gofiber/fiber/v2"
 	"log"
-	"os"
-	"os/signal"
+
+	"github.com/gofiber/fiber/v2"
 )
 
-// Запуск для prod
-'''
+/* Запуск для prod
+
 func StartServerWithGracefulShutdown(a *fiber.App) {
 
 	Добавить канал для приема только shutdown! открыть его на всю функцию
-	
+
 	// Build Fiber connection URL.
 	fiberConnURL, errConn := ConnectionURLBuilder("fiber")
 	if errConn != nil {
@@ -24,9 +23,9 @@ func StartServerWithGracefulShutdown(a *fiber.App) {
 		log.Printf("Oops... Server is not running! Reason: %v", err)
 	}
 
-	
+
 }
-'''
+*/
 
 // Запуск для dev
 func StartServer(a *fiber.App) {
