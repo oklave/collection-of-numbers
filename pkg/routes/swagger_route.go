@@ -2,9 +2,8 @@ package routes
 
 import (
 	"github.com/gofiber/fiber/v2"
-	swagger "github.com/gofiber/swagger"
-
-	_ "github.com/oklave/collection-of-numbers/docs" // cложно
+	//swagger "github.com/gofiber/swagger"
+	//_ "github.com/oklave/collection-of-numbers/docs" // cложно
 )
 
 func SwaggerRoute(a *fiber.App) {
@@ -12,5 +11,5 @@ func SwaggerRoute(a *fiber.App) {
 	route := a.Group("/swagger")
 
 	// Маршруты для get-метода
-	route.Get("*", swagger.HandlerDefault)
+	//route.Get("*", swagger.HandlerDefault)
 }
