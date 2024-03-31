@@ -1,9 +1,11 @@
 package controllers
 
 import (
+	"github.com/google/uuid"
 	"github.com/oklave/collection-of-numbers/pkg/response"
+	"github.com/oklave/collection-of-numbers/platform/database"
 
-	"github.com/oklave/fiber/v2"
+	"github.com/gofiber/fiber/v2"
 )
 
 func GetNumber(c *fiber.Ctx) error {
@@ -12,5 +14,13 @@ func GetNumber(c *fiber.Ctx) error {
 	if err != nil {
 		return response.RespondError(c, fiber.StatusInternalServerError, err.Error())
 	}
+	db := database.NumberDB()
+	book, err := db.GetBookById(id)
+	if err != nil {
+		// Return, if book not found.
+		return response.RespondError(c, fiber.StatusNotFound, "book with the given ID is not found")
+	}
 
+	// Return status 200 OK.
+	return response.RespondSuccess(c, fiber.StatusOK, book)
 }

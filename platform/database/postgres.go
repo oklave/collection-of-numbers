@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/aryanicosa/collection-of-numbers/pkg/utils"
 	"github.com/oklave/collection-of-numbers/app/queries"
+	"github.com/oklave/collection-of-numbers/pkg/utils"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )
